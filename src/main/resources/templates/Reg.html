@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registation Form</title>
+<style>
+  body {
+    font-family:cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  form {
+    border: 1px solid #ccc;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow:0 1 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+  label {
+    
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn {
+    display: block;
+    margin: 0 auto;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ 
+  .btn:hover
+  {
+  background-color:green;
+  
+  }
+  
+  
+</style>
+</head>
+<body>
+<form action="#" th:object="${obj}" th:action="@{/regdata}">
+
+  <h1 style="align-items:center;">Registation Form</h1>
+  <label for="fname">User name:</label>
+  <input type="text" th:field=*{name}>
+
+  <label for="lname">Password :</label>
+  <input type="text" th:field=*{password}>
+
+  <br>
+  <input type="submit" value="Submit" class="btn">
+</form>
+</body>
+</html>
